@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#164A78">
+<title>Hackatón Docente 2026 | Ruta de mentorías</title>
+<style>
+:root{
+  --navy:#164A78;--navy2:#0D385F;--blue:#0C629C;--cyan:#13C6F1;
+  --red:#F51B3B;--text:#263746;--muted:#667C8F;--line:#DCE7EE;
+  --light:#EEF7FD;--light2:#DFF1FC;--green:#119C74;--greensoft:#E9F8F1;
+  --shadow:0 16px 42px rgba(15,61,103,.11)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Avenir Next","Aptos","Segoe UI Variable","Segoe UI",Arial,sans-serif;color:var(--text);background:#EAF2F7}
+button{font:inherit}
+.app{width:min(820px,100%);min-height:100vh;margin:auto;background:#fff;box-shadow:0 0 60px rgba(15,61,103,.12);overflow:hidden}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #E7EEF3;padding:max(11px,env(safe-area-inset-top)) 15px 11px}
+.brand strong{display:block;color:var(--navy);font-size:14px;font-weight:700}
+.brand span{display:block;color:#72879A;font-size:11px;margin-top:2px}
+.progress-wrap{margin-top:9px}.progress-meta{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#748A9B;font-weight:700;letter-spacing:.04em}.progress{height:7px;background:#E9F0F4;border-radius:999px;overflow:hidden;margin-top:6px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .35s ease}
+main{padding:24px 16px 50px}
+.section-head{padding:4px 0 18px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}.eyebrow:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red)}
+.section-head h1{margin:10px 0 0;color:var(--navy);font-size:clamp(34px,10vw,54px);line-height:1;font-weight:620;letter-spacing:-.03em}.section-head h1 .accent{color:var(--cyan)}
+.lead{margin:14px 0 0;color:#405768;font-size:16px;line-height:1.55}
+.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:430px;margin:68px auto 0;padding:2px 0 8px;transition:transform .42s cubic-bezier(.22,.7,.25,1)}.filters.has-selection{transform:translateY(-46px)}.filter-btn{width:100%;min-height:44px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);padding:10px 8px;font-size:12px;font-weight:700;cursor:pointer;text-align:center}.filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.mentor-grid{display:grid;gap:9px;margin-top:8px}.filters.has-selection + .mentor-grid{margin-top:-38px}.mentor-grid.reveal{animation:contentReveal .36s ease}.mentor-btn{width:100%;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px 15px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center}.mentor-btn.selected{background:#F1FAFE;border-color:#9CDCF0;box-shadow:inset 0 0 0 2px #D7F2FA}.mentor-name{display:block;color:var(--navy);font-weight:700;font-size:14px;text-align:center}.badge{display:inline-flex;align-items:center;margin-top:7px;padding:5px 9px;border-radius:999px;font-size:10px;font-weight:700}.badge.edu{background:#FFE2EC;color:#C91F55}.badge.inn{background:#DCF8FF;color:#00789B}.badge.ti{background:#E8ECFF;color:#2943AA}
+.route-card-shell{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:20px;background:#F8FBFD;scroll-margin-top:94px}.route-card-shell:not([hidden]){animation:contentReveal .32s ease}@keyframes contentReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.selected-mentor{text-align:center;color:var(--navy);font-size:17px;font-weight:700;line-height:1.35}.selected-mentor .badge{margin-left:5px;margin-top:5px}.round-grid{display:grid;gap:10px;margin-top:14px}.round-card{padding:16px;border:1px solid var(--line);border-radius:17px;background:#fff;text-align:center}.round-card.done{background:var(--greensoft);border-color:#A6DEC7}.round-head{display:flex;flex-direction:column;justify-content:center;gap:5px;align-items:center}.round-title{color:var(--navy);font-size:17px;font-weight:700;text-align:center}.round-time{color:#667C8F;font-size:11px;line-height:1.35;text-align:center}.round-group{margin:14px 0;color:var(--blue);font-size:25px;font-weight:700;text-align:center}.complete-btn{width:100%;border:0;border-radius:999px;padding:12px 14px;cursor:pointer;font-weight:700;background:linear-gradient(135deg,var(--red),#F23E70);color:#fff;box-shadow:0 8px 18px rgba(245,27,59,.16)}.round-card.done .complete-btn{background:linear-gradient(135deg,var(--green),#19B982);box-shadow:0 8px 18px rgba(17,156,116,.16)}.round-note{margin-top:9px;color:#667C8F;font-size:10px;line-height:1.4}.no-selection{padding:22px 16px;text-align:center;border:1px dashed var(--line);border-radius:15px;color:var(--muted);background:#fff;font-size:12px}.reset-row{text-align:center;margin-top:12px}.reset-btn{border:1px solid #D5E3EB;border-radius:999px;background:#fff;color:var(--navy);padding:10px 14px;font-size:11px;font-weight:700;cursor:pointer}
+.plan-shell{margin-top:34px;padding:17px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#F8FBFD,#F2F8FC)}.plan-shell h2{margin:0;text-align:center;color:var(--navy);font-size:24px}.plan-shell>p{margin:7px auto 14px;text-align:center;color:#647B8D;font-size:12px;line-height:1.5;max-width:620px}.plan-legend{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:14px}.legend-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:650}.legend-pill:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}.legend-pill.edu{background:#F7E5EE;color:#D62467}.legend-pill.inn{background:#DDF4FB;color:#006C97}.legend-pill.ti{background:#E9E9FB;color:#384BBF}.tables-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.table-marker{min-height:112px;padding:12px 7px;border-radius:17px;border:1px solid #CFE0EB;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}.group-name{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:35px;padding:6px 9px;border-radius:11px;background:var(--navy2);color:#fff;font-size:13px;font-weight:700;white-space:nowrap}.mini-route{display:flex;justify-content:center;gap:4px;flex-wrap:nowrap;margin-top:9px;width:100%}.mini-step{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:30px;flex:1}.mini-step b{display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:38px;padding:4px 3px;border-radius:8px;background:#EEF3F6;border:1px solid #D9E3E9;color:#536B7D;font-size:8px}.mini-specialty{display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:38px;padding:5px 3px;border-radius:999px;font-size:9px;font-weight:700}.mini-specialty.edu{background:#F7E5EE;color:#D62467}.mini-specialty.inn{background:#DDF4FB;color:#006C97}.mini-specialty.ti{background:#E9E9FB;color:#384BBF}.plan-note{margin:7px auto 13px;text-align:center;color:#6B8192;font-size:11px;line-height:1.45}
+.toast{position:fixed;right:18px;bottom:18px;z-index:50;background:var(--navy);color:#fff;padding:11px 14px;border-radius:999px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s;font-size:12px}.toast.show{opacity:1;transform:none}
+@media(min-width:700px){main{padding:34px 34px 60px}.mentor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.round-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tables-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-shell{padding:24px}}
+
+/* Navegación inicial entre Ruta y Plano */
+.view{display:none;animation:viewFade .25s ease}
+.view.active{display:block}
+.menu-view{padding-top:10px}
+.menu-title{margin:8px 0 8px;color:var(--navy);font-size:clamp(36px,10vw,54px);line-height:1;font-weight:620;letter-spacing:-.03em}
+.menu-copy{margin:0 0 20px;color:#405768;font-size:16px;line-height:1.55}
+.menu-options{display:grid;gap:12px}
+.menu-option{width:100%;border:1px solid var(--line);border-radius:20px;background:#fff;padding:20px 18px;display:grid;grid-template-columns:48px 1fr 34px;gap:13px;align-items:center;text-align:left;cursor:pointer;box-shadow:0 8px 20px rgba(15,61,103,.05)}
+.menu-option .menu-num{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--light2);color:var(--navy);font-weight:700}
+.menu-option strong{display:block;color:var(--navy);font-size:18px}
+.menu-option span{display:block;margin-top:3px;color:#6B8192;font-size:12px;line-height:1.4}
+.menu-option .menu-arrow{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--light2);color:var(--blue);font-size:22px;font-weight:700}
+.back-row{margin-bottom:18px}
+.back-btn{border:1px solid #D5E3EB;border-radius:999px;background:#fff;color:var(--navy);padding:10px 14px;font-size:12px;font-weight:700;cursor:pointer}
+@keyframes viewFade{from{opacity:.15;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><strong>HACKATÓN DOCENTE 2026</strong><span>Ruta de mentorías · seguimiento de rondas</span></div>
+</header>
+<main>
+  <section id="menuView" class="view active menu-view">
+    <div class="eyebrow">Mentorías</div>
+    <h1 class="menu-title">¿Qué deseas <span style="color:var(--cyan)">consultar?</span></h1>
+    <p class="menu-copy">Selecciona una opción para ingresar.</p>
+    <div class="menu-options">
+      <button class="menu-option" data-open-view="routeView"><span class="menu-num">01</span><span><strong>Tu ruta</strong><span>Selecciona tu nombre y revisa los grupos que acompañarás en cada ronda.</span></span><span class="menu-arrow">›</span></button>
+      <button class="menu-option" data-open-view="planView"><span class="menu-num">02</span><span><strong>Ubicación de grupos</strong><span>Ubica los grupos y revisa la secuencia de especialidades por ronda.</span></span><span class="menu-arrow">›</span></button>
+    </div>
+  </section>
+
+  <section id="routeView" class="view">
+    <div class="back-row"><button class="back-btn" data-back-menu>‹ Volver al menú</button></div>
+    <div class="section-head"><div class="eyebrow">Mi ruta</div><h1>Selecciona tu <span class="accent">nombre</span></h1><p class="lead">Elige tu nombre para ver los grupos que acompañarás y marcar las rondas que vayas completando.</p></div>
+    <div class="filters"><button class="filter-btn" data-filter="Educación">Educación</button><button class="filter-btn" data-filter="Innovación">Innovación</button><button class="filter-btn" data-filter="TI">TI</button></div>
+    <div id="mentorGrid" class="mentor-grid"></div>
+    <div id="routeShell" class="route-card-shell" hidden><div id="selectedMentor" class="selected-mentor"></div><div id="roundGrid" class="round-grid"></div><div class="reset-row"><button id="resetBtn" class="reset-btn">Reiniciar mi progreso</button></div></div>
+  </section>
+
+  <section id="planView" class="view">
+    <div class="back-row"><button class="back-btn" data-back-menu>‹ Volver al menú</button></div>
+    <div class="plan-shell" style="margin-top:0">
+      <h2>Plano de ubicación de los grupos</h2>
+      <div class="plan-note">R1–R4 indican la ronda. El color identifica la especialidad que acompañará al grupo en ese momento.</div>
+      <p>Cada mesa muestra la secuencia de especialidades que acompañará al grupo durante las cuatro rondas.</p>
+      <div class="plan-legend"><span class="legend-pill edu">Educación</span><span class="legend-pill inn">Innovación</span><span class="legend-pill ti">TI</span></div>
+      <div id="groupPlan" class="tables-grid"></div>
+    </div>
+  </section>
+</main>
+</div>
+<div id="toast" class="toast">Guardado</div>
+<script>
+(function(){
+"use strict";
+const mentors = [{"name":"David Orlando Paucar Ochoa","spec":"Educación","route":["Grupo 1","Grupo 7","Grupo 4","Grupo 5"]},{"name":"Marcelo Jorge Sosa Salazar","spec":"Educación","route":["Grupo 2","Grupo 8","Grupo 1","Grupo 6"]},{"name":"Priscila Anthuane Diaz Sevillano","spec":"Educación","route":["Grupo 3","Grupo 9","Grupo 2","Grupo 10"]},{"name":"Renzo Robles León","spec":"Innovación","route":["Grupo 4","Grupo 1","Grupo 3","Grupo 7"]},{"name":"Mauricio Mendez Vilca","spec":"Innovación","route":["Grupo 5","Grupo 2","Grupo 6","Grupo 8"]},{"name":"Martin Rengifo Davalos","spec":"Innovación","route":["Grupo 6","Grupo 10","Grupo 5","Grupo 9"]},{"name":"Jose Aaron Villa Longa","spec":"TI","route":["Grupo 7","Grupo 3","Grupo 10","Grupo 1"]},{"name":"Jorge Jhon Taipe Figueroa","spec":"TI","route":["Grupo 8","Grupo 4","Grupo 7","Grupo 3"]},{"name":"Ernesto Jose Delgado Sevilla","spec":"TI","route":["Grupo 9","Grupo 5","Grupo 8","Grupo 4"]},{"name":"Luis Fernando Flores Mejia","spec":"TI","route":["Grupo 10","Grupo 6","Grupo 9","Grupo 2"]}];
+const rounds=[{title:"Ronda 1",time:"8:50 – 9:20 a. m."},{title:"Ronda 2",time:"9:20 – 10:20 a. m."},{title:"Ronda 3",time:"10:20 – 11:20 a. m."},{title:"Ronda 4",time:"11:20 – 11:50 a. m."}];
+let selectedIndex=null,currentFilter=null;
+const mentorGrid=document.getElementById('mentorGrid');
+const filters=document.querySelector('.filters');
+const roundGrid=document.getElementById('roundGrid');
+const selectedMentor=document.getElementById('selectedMentor');
+const routeShell=document.getElementById('routeShell');
+const resetBtn=document.getElementById('resetBtn');
+const toast=document.getElementById('toast');
+function specClass(spec){return spec==="Educación"?"edu":spec==="Innovación"?"inn":"ti"}
+function badgeEl(spec){const s=document.createElement('span');s.className='badge '+specClass(spec);s.textContent=spec;return s}
+function mentorKey(mentor){return "hackready_"+mentor.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"_")}
+function progressKey(mentor,i){return mentorKey(mentor)+"_round_"+i}
+function roundDone(mentor,i){return localStorage.getItem(progressKey(mentor,i))==="1"}
+function setRoundDone(mentor,i,v){localStorage.setItem(progressKey(mentor,i),v?"1":"0")}
+function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),1300)}
+function buildGroupMatrix(){const matrix={};for(let g=1;g<=10;g++)matrix['Grupo '+g]=[null,null,null,null];mentors.forEach(m=>m.route.forEach((g,i)=>matrix[g][i]=m));return matrix}
+function renderGroupPlan(){const matrix=buildGroupMatrix();const plan=document.getElementById('groupPlan');plan.replaceChildren();for(let g=1;g<=10;g++){const group='Grupo '+g;const card=document.createElement('div');card.className='table-marker';const name=document.createElement('span');name.className='group-name';name.textContent='Grupo '+g;const route=document.createElement('div');route.className='mini-route';matrix[group].forEach((mentor,i)=>{const step=document.createElement('span');step.className='mini-step';const r=document.createElement('b');r.textContent='R'+(i+1);const sp=document.createElement('span');sp.className='mini-specialty '+specClass(mentor.spec);sp.textContent=mentor.spec==='Educación'?'E':mentor.spec==='Innovación'?'I':'TI';sp.title='Ronda '+(i+1)+': '+mentor.spec;step.append(r,sp);route.appendChild(step)});card.append(name,route);plan.appendChild(card)}}
+function renderMentors(){mentorGrid.classList.remove('reveal');mentorGrid.replaceChildren();if(!currentFilter)return;mentors.filter(m=>m.spec===currentFilter).forEach(m=>{const idx=mentors.indexOf(m);const b=document.createElement('button');b.className='mentor-btn'+(idx===selectedIndex?' selected':'');const name=document.createElement('span');name.className='mentor-name';name.textContent=m.name;b.append(name,badgeEl(m.spec));b.addEventListener('click',()=>{selectedIndex=idx;renderMentors();renderRoute();routeShell.scrollIntoView({behavior:'smooth',block:'start'})});mentorGrid.appendChild(b)});requestAnimationFrame(()=>mentorGrid.classList.add('reveal'))}
+function renderRoute(){roundGrid.replaceChildren();selectedMentor.replaceChildren();if(selectedIndex===null){routeShell.hidden=true;return}routeShell.hidden=false;const m=mentors[selectedIndex];selectedMentor.append(document.createTextNode(m.name+' '),badgeEl(m.spec));rounds.forEach((r,i)=>{const done=roundDone(m,i);const card=document.createElement('article');card.className='round-card'+(done?' done':'');const head=document.createElement('div');head.className='round-head';const title=document.createElement('div');title.className='round-title';title.textContent=r.title;const time=document.createElement('div');time.className='round-time';time.textContent=r.time;head.append(title,time);const group=document.createElement('div');group.className='round-group';group.textContent=m.route[i];const btn=document.createElement('button');btn.className='complete-btn';btn.textContent=done?'✓ Ronda completada':'Marcar como completada';btn.addEventListener('click',()=>{setRoundDone(m,i,!roundDone(m,i));renderRoute();showToast(roundDone(m,i)?'Ronda completada':'Ronda reabierta')});card.append(head,group,btn);roundGrid.appendChild(card)})}
+document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{currentFilter=btn.dataset.filter;selectedIndex=null;filters.classList.add('has-selection');document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn));renderMentors();renderRoute()}));
+resetBtn.addEventListener('click',()=>{if(selectedIndex===null){showToast('Selecciona primero un mentor');return}const m=mentors[selectedIndex];rounds.forEach((_,i)=>localStorage.removeItem(progressKey(m,i)));renderRoute();showToast('Progreso reiniciado')});
+function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('[data-open-view]').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.openView)));
+document.querySelectorAll('[data-back-menu]').forEach(btn=>btn.addEventListener('click',()=>showView('menuView')));
+renderGroupPlan();renderMentors();renderRoute();
+})();
+</script>
+</body>
+</html>
